@@ -1,0 +1,7 @@
+.form {
+    background: linear-gradient(180deg, #307e6c, #2b996d);
+    border: 0px solid black;
+    border-radius: 0.3rem;
+    padding: 2rem;
+    width: 50vw;
+}

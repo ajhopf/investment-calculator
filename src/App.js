@@ -8,18 +8,19 @@ function App() {
   const [yearlyData, setYearlyData] = useState([]);
   
   const calculateInvestment = (userInput) => {
-    setYearlyData([]); // per-year results
+    setYearlyData([]);
 
-    let currentSavings = +userInput.currentSavings; // feel free to change the shape of this input object!
-    const yearlyContribution = +userInput.yearlySavings; // as mentioned: feel free to change the shape...
+    const data = [];
+
+    let currentSavings = +userInput.currentSavings;
+    const yearlyContribution = +userInput.yearlySavings;
     const expectedReturn = +userInput.expectedInterest / 100;
     const duration = +userInput.investmentDuration;
 
     for (let i = 0; i < duration; i++) {
       const yearlyInterest = currentSavings * expectedReturn;
       currentSavings += yearlyInterest + yearlyContribution;
-      yearlyData.push({
-        // feel free to change the shape of the data pushed to the array!
+      data.push({
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
@@ -27,7 +28,7 @@ function App() {
       });
     }
 
-    setYearlyData(yearlyData)
+    setYearlyData(data)
     console.log(yearlyData.length);
   }
 
@@ -37,7 +38,7 @@ function App() {
         <img src={logo} className="header-logo" alt="logo" />
         <h1>Investment Calculator</h1>
       </header>
-      <InvestmentForm calculateInvestment={calculateInvestment}></InvestmentForm>
+      <InvestmentForm calculateInvestment={calculateInvestment} setYearlyData={setYearlyData}></InvestmentForm>
       {yearlyData.length > 0 && <InvestmentTable yearlyData={yearlyData}/>}
     </main>
   );
