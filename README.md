@@ -2,13 +2,13 @@
 
 This is a tiny project that i developed so i could start practicing using React again after months of using only Angular as a front-end framework.
 
-Simply select:
-- the amount of your current savings
-- the amount of yearly savings
-- how much interest per year the investment will yield
-- how long the investment duration is
-- Click calculate ... BOOM!
-- See the power of compound interest.
+How to use it:
+- Set the amount of your current savings;
+- Set the amount of yearly savings;
+- Set how much interest per year the investment will yield;
+- Set how long the investment duration is;
+- Click calculate and ... BOOM!
+- Be amazed with the power of compound interest.
 
 ## Getting Started with Create React App
 
