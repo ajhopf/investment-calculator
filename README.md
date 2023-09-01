@@ -9,5 +9,3 @@ How to use it:
 - Set how long the investment duration is;
 - Click calculate and ... BOOM!
 - Be amazed with the power of compound interest.
-
-Website: [investment-calculator-two.vercel.app/]
