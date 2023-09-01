@@ -5,19 +5,21 @@ const InvestmentTable = props => {
         <thead>
         <tr>
           <th scope="col">Year</th>
-          <th scope="col">Total Savings</th>
+          <th scope="col">Savings Begin of Year</th>
+          <th scope="col">Yearly Saving</th>
           <th scope="col">Interest (Year)</th>
-          <th scope="col">Total Interest</th>
-          <th scope="col">Invested Capital</th>
+          <th scope="col">Total Accumulated Interest</th>
+          <th scope="col">Invested Capital End of Year</th>
         </tr>
         </thead>
         <tbody>
-        {props.yearlyData.map((data) => {
-          return <tr>
+        {props.yearlyData.map((data, i) => {
+          return <tr key={i}>
             <td>{ data.year }</td>
-            <td>{ data.savingsEndOfYear }</td>
+            <td>{ data.savingBeginOfYear }</td>
+            <td>{ data.yearlyContribution }</td>
             <td>{ data.yearlyInterest }</td>
-            <td>ooooo</td>
+            <td>{ data.totalInterest }</td>
             <td>{ data.savingsEndOfYear }</td>
           </tr>})
         }

@@ -16,20 +16,24 @@ function App() {
     const yearlyContribution = +userInput.yearlySavings;
     const expectedReturn = +userInput.expectedInterest / 100;
     const duration = +userInput.investmentDuration;
+    let totalInterest = 0;
 
     for (let i = 0; i < duration; i++) {
       const yearlyInterest = currentSavings * expectedReturn;
+      totalInterest += yearlyInterest;
+      const savingsBeginOfYear = currentSavings;
       currentSavings += yearlyInterest + yearlyContribution;
       data.push({
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
+        savingBeginOfYear: savingsBeginOfYear,
+        totalInterest: totalInterest,
         yearlyContribution: yearlyContribution,
       });
     }
 
     setYearlyData(data)
-    console.log(yearlyData.length);
   }
 
   return (

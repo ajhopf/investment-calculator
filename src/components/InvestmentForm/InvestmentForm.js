@@ -2,12 +2,12 @@ import './InvestmentForm.css'
 import MyButton from "../../UI/Button/Button";
 
 const InvestmentForm = props => {
-  const onResetForm = () => {
+  const resetHandler = () => {
     document.getElementById('investmentForm').reset();
     props.setYearlyData([]);
   };
 
-  const onSubmit = (event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
     const userInput = {
       currentSavings: event.target['current-savings'].value,
@@ -21,7 +21,7 @@ const InvestmentForm = props => {
 
   return (
     <section className="d-flex justify-content-center my-5">
-      <form onSubmit={onSubmit} id="investmentForm" className="form">
+      <form onSubmit={submitHandler} id="investmentForm" className="form">
         <div className="row">
           <div className="col-6 mb-3">
             <label htmlFor="current-savings" className="form-label">Current Savings ($)</label>
@@ -46,7 +46,7 @@ const InvestmentForm = props => {
 
         <div className="row">
           <div className="col-6 d-flex justify-content-end">
-            <MyButton type="button" className="btn btn-outline-dark" onClick={onResetForm}>Reset</MyButton>
+            <MyButton type="button" className="btn btn-outline-dark" onClick={resetHandler}>Reset</MyButton>
           </div>
           <div className="col-6">
             <MyButton type="submit" className="btn btn-outline-dark">Calculate</MyButton>
